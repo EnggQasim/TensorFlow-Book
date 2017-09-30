@@ -15,7 +15,7 @@ def read(filename, date_idx, date_parse, year, bucket=7):
         freq[period] = 0
 
     # Read data and aggregate crimes per day
-    with open(filename, 'rb') as csvfile:
+    with open(filename, 'r') as csvfile:
         csvreader = csv.reader(csvfile)
         csvreader.next()
         for row in csvreader:
@@ -29,4 +29,4 @@ def read(filename, date_idx, date_parse, year, bucket=7):
 
 if __name__ == '__main__':
     freq = read('311.csv', 0, '%m/%d/%Y', 2014)
-    print freq
+    print (freq)
